@@ -23,21 +23,18 @@ const Section1: FC = () => {
           <S.Hero src={data.task.img} alt="hero" loading="lazy" />
         </S.Card>
 
-        <div className="grid">
-          {data.cards.map((c) => (
-            <S.Card key={c.key} className={c.key}>
-              <h1>{c.title}</h1>
-              <p>{c.desc}</p>
+        <div className="grid-items">
+          <S.Card>
+            <h1>{data.workflows.title}</h1>
+            <p>{data.workflows.desc}</p>
+            <S.Frame src={data.workflows.img} alt="workflows" loading="lazy" />
+          </S.Card>
 
-              {c.key === "workflows" && (
-                <S.Frame src={c.img} alt="workflows" loading="lazy" />
-              )}
-
-              {c.key === "tracking" && (
-                <S.Mockup src={c.img} alt="tracking" loading="lazy" />
-              )}
-            </S.Card>
-          ))}
+          <S.Card className="tracking">
+            <h1>{data.tracking.title}</h1>
+            <p>{data.tracking.desc}</p>
+            <S.Mockup src={data.tracking.img} alt="tracking" loading="lazy" />
+          </S.Card>
         </div>
       </S.Left>
 

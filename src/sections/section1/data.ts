@@ -15,20 +15,17 @@ export const data = {
     img: Img2,
   },
 
-  cards: [
-    {
-      key: "workflows",
-      title: "Workflows",
-      desc: "Tailor tools to fit your team’s unique needs.",
-      img: Img3,
-    },
-    {
-      key: "tracking",
-      title: "Tracking",
-      desc: "Monitor milestones and stay on schedule.",
-      img: Img4,
-    },
-  ],
+  workflows: {
+    title: "Workflows",
+    desc: "Tailor tools to fit your team’s unique needs.",
+    img: Img3,
+  },
+
+  tracking: {
+    title: "Tracking",
+    desc: "Monitor milestones and stay on schedule.",
+    img: Img4,
+  },
 
   collab: {
     title: "Collaboration",

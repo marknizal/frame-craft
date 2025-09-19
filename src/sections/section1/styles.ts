@@ -10,7 +10,7 @@ const GRADIENT = {
       to bottom,
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0)
-    ) top / 100% 50% no-repeat
+    ) top / 100% 70% no-repeat
   `,
 
   task: `
@@ -32,17 +32,13 @@ const GRADIENT = {
 
 export const Wrapper = styled(Container)`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1.25rem;
   align-items: stretch;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
   padding: 4rem 1rem;
 
-  ${BREAKPOINT.tablet} {
-    grid-template-columns: 1fr;
-  }
-
-  ${BREAKPOINT.mobile} {
-    grid-template-columns: 1fr;
+  ${BREAKPOINT.desktop} {
+    grid-template-columns: 2fr 1fr;
   }
 `;
 
@@ -51,7 +47,7 @@ export const Left = styled.div`
   flex-direction: column;
   gap: 1.25rem;
 
-  .grid {
+  .grid-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
@@ -82,40 +78,17 @@ export const Card = styled(C)`
   &.task {
     background: ${GRADIENT.task};
     position: relative;
-    aspect-ratio: 2 / 1;
-  }
+    padding-bottom: 12rem;
 
-  &.workflows {
-    aspect-ratio: 1 / 1;
-  }
-
-  &.workflows img {
-    margin-top: auto;
+    ${BREAKPOINT.mobile} {
+      padding-bottom: 18rem;
+    }
   }
 
   &.tracking {
-    aspect-ratio: 1 / 1;
     background: ${GRADIENT.tracking};
     color: ${COLOR.white};
     position: relative;
-  }
-
-  ${BREAKPOINT.mobile} {
-    &.task {
-      aspect-ratio: 3 / 4;
-    }
-
-    &.workflows {
-      aspect-ratio: 3 / 4;
-    }
-
-    &.workflows img {
-      aspect-ratio: 4 / 3;
-    }
-
-    &.tracking {
-      aspect-ratio: 3 / 4;
-    }
   }
 `;
 
@@ -133,47 +106,47 @@ export const Right = styled(Card)`
 `;
 
 export const Hero = styled.img`
-  width: 32rem;
   position: absolute;
+  width: 30rem;
   aspect-ratio: auto;
   object-fit: contain;
-  top: -1.5rem;
-  right: -1rem;
   z-index: 1;
 
-  ${BREAKPOINT.tablet} {
-    top: auto;
-    bottom: -1rem;
-    right: -0.5rem;
+  bottom: -1rem;
+  right: -0.5rem;
+
+  ${BREAKPOINT.desktop} {
+    top: -2rem;
+    right: -1rem;
   }
+`;
+
+export const Frame = styled.img`
+  aspect-ratio: 4 / 3;
+  border-radius: ${RADIUS.base};
+  object-fit: cover;
+  margin-top: auto;
 
   ${BREAKPOINT.mobile} {
-    top: auto;
-    bottom: -1rem;
-    right: -0.5rem;
+    aspect-ratio: 1 / 1;
   }
 `;
 
 export const Mockup = styled.img`
-  width: 20rem;
-  object-fit: contain;
   position: absolute;
-  aspect-ratio: 4 / 3;
+  margin-top: auto;
   bottom: -1rem;
   left: 50%;
+  width: 90%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+
   filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
   transform: translateX(-50%) rotate(-5deg);
 
   ${BREAKPOINT.mobile} {
     position: static;
-    transform: none;
-    margin-top: auto;
     width: 100%;
+    transform: rotate(-5deg);
   }
-`;
-
-export const Frame = styled.img`
-  aspect-ratio: 16 / 9;
-  border-radius: ${RADIUS.base};
-  object-fit: cover;
 `;
