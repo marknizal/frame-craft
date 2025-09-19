@@ -123,7 +123,7 @@ export const Hero = styled.img`
 
 export const Frame = styled.img`
   aspect-ratio: 4 / 3;
-  border-radius: ${RADIUS.base};
+  border-radius: ${RADIUS.lg};
   object-fit: cover;
   margin-top: auto;
 

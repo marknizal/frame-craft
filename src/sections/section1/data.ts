@@ -1,5 +1,5 @@
 import Img2 from "../../assets/image-2.webp";
-import Img3 from "../../assets/image-3.webp";
+import Img3 from "../../assets/workflow.gif";
 import Img4 from "../../assets/image-4.png";
 
 import A1 from "../../assets/A1.jpg";
