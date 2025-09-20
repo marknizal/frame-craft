@@ -58,6 +58,27 @@ export const Left = styled.div`
   }
 `;
 
+export const Mockup = styled.img`
+  position: absolute;
+  left: 50%;
+  bottom: -1rem;
+  margin-top: auto;
+  width: 90%;
+  aspect-ratio: 4 / 3;
+
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+
+  transform: translateX(-50%) rotate(-5deg);
+  transition: all 0.2s ease;
+
+  ${BREAKPOINT.mobile} {
+    position: static;
+    width: 100%;
+    transform: rotate(-5deg);
+  }
+`;
+
 export const Card = styled(C)`
   display: flex;
   flex-direction: column;
@@ -86,9 +107,19 @@ export const Card = styled(C)`
   }
 
   &.tracking {
-    background: ${GRADIENT.tracking};
-    color: ${COLOR.white};
     position: relative;
+    color: ${COLOR.white};
+    background: ${GRADIENT.tracking};
+    cursor: pointer;
+
+    &:hover ${Mockup} {
+      bottom: 1rem;
+      transform: translateX(-50%) rotate(0deg);
+
+      ${BREAKPOINT.mobile} {
+        transform: rotate(0deg);
+      }
+    }
   }
 `;
 
@@ -129,24 +160,5 @@ export const Frame = styled.img`
 
   ${BREAKPOINT.mobile} {
     aspect-ratio: 1 / 1;
-  }
-`;
-
-export const Mockup = styled.img`
-  position: absolute;
-  margin-top: auto;
-  bottom: -1rem;
-  left: 50%;
-  width: 90%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
-  transform: translateX(-50%) rotate(-5deg);
-
-  ${BREAKPOINT.mobile} {
-    position: static;
-    width: 100%;
-    transform: rotate(-5deg);
   }
 `;
