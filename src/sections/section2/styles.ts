@@ -50,7 +50,7 @@ export const Left = styled.section`
     line-height: 4rem;
   }
 
-  h3 {
+  h2 {
     font-size: ${FONTSIZE.xl};
     font-weight: 500;
   }

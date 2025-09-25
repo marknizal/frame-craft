@@ -9,7 +9,7 @@ const Section2: FC = () => {
     <S.Wrapper>
       <S.Left>
         <h1>Work Smarter, Together</h1>
-        <h3>All your tasks, teammates, and timelines</h3>
+        <h2>All your tasks, teammates, and timelines</h2>
 
         <p>
           Streamline project planning, boost team alignment, and deliver results
