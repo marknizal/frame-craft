@@ -10,7 +10,12 @@ export const Main = styled.main`
 export const Section = styled.section<T.SectionProps>`
   display: flex;
   align-items: stretch;
-  background: ${(props) => props.$bg || COLOR.white};
+  background: ${({ $bg }) =>
+    $bg
+      ? $bg.startsWith("/") || $bg.startsWith("http")
+        ? `url(${$bg}) no-repeat center/cover`
+        : $bg
+      : COLOR.white};
 `;
 
 export const Container = styled.div`

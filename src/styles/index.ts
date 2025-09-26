@@ -26,6 +26,7 @@ export const COLOR = {
   white: "#FFFFFF",
   black: "#000000",
 
+  dark: "#212121",
   transparent: "rgba(0,0,0,0)",
   background: "#F2F4F7",
 
